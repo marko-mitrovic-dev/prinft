@@ -7,35 +7,34 @@ int ft_printf(const char *str, ...)
     int letter_counter;
     va_list args;
 
-    va_start(args, str);
 
     i = 0;
     letter_counter = 0; 
 
     if (str == NULL)
-        return(-1); // ili treba 0 jer je int? 
+        return(-1);
+
+    va_start(args, str);
+
 
     while ( str[i] != '\0')
     {
        if (str[i] != '%')
        {
-        write(1, &str[i], 1);
-        letter_counter++;
+        letter_counter += ft_putchar_len(str[i]);
        }  else if (str[i] == '%' && str[i + 1] == 'c')
        {
-        ft_putchar_len(va_arg(args, int));
-        letter_counter++;
+        letter_counter += ft_putchar_len(va_arg(args, int));
         i++;
        } else if (str[i] == '%' && str[i + 1] == '%')
        {
-        write(1, &str[i], 1);
-        letter_counter++;
+        letter_counter += ft_putchar_len('%');
         i++;
        }
 
        i++;
     }
-    (args);
+    va_end(args);
 
     return(letter_counter);
     }
@@ -44,4 +43,6 @@ int ft_printf(const char *str, ...)
 
     /*
     standard printf returns -1 if forwarded invalid pointer
-     */
+    because ft_putchar_len.c returns 1, I can concatenate with counters(letter_counter) 
+    
+    */
