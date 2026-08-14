@@ -30,6 +30,10 @@ int ft_printf(const char *str, ...)
        {
         letter_counter += ft_putchar_len('%');
         i++;
+       } else if (str[i] == '%' && str[i + 1] == 's')
+       {
+        letter_counter += ft_putstr_len(va_arg(args, char *));
+        i++;
        }
 
        i++;
