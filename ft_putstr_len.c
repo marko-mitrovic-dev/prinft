@@ -1,7 +1,24 @@
 #include "ft_printf.h"
 
-int	ft_putchar_len(char c)
+int	ft_putstr_len(char *s)
 {
-	write(1, &c, 1);
-	return (1); // Odštampali smo tačno 1 karakter
+    int i;
+    int counter;
+
+    counter = 0;
+    i = 0;
+
+    if(!s)
+    {
+        write(1, "(null)", 6);
+        return (6);
+    }
+    
+    while (s[i] != '\0')
+    {
+        write(1, &s[i], 1);
+        counter++;
+        i++;
+    }
+	return (counter);
 }
