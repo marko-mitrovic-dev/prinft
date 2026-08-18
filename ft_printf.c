@@ -34,7 +34,11 @@ int ft_printf(const char *str, ...)
        {
         letter_counter += ft_putstr_len(va_arg(args, char *));
         i++;
-       }
+       } else if (str[i] == '%' && (str[i + 1] == 'd' || str[i + 1] == 'i'))
+       {
+        letter_counter += ft_putnbr_len(va_arg(args, int));
+        i++;
+        }
 
        i++;
     }
