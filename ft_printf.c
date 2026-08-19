@@ -38,6 +38,10 @@ int ft_printf(const char *str, ...)
        {
         letter_counter += ft_putnbr_len(va_arg(args, int));
         i++;
+        } else if (str[i] == '%' && (str[i + 1] == 'u'))
+       {
+        letter_counter += ft_putuint_len(va_arg(args, unsigned int));
+        i++;
         }
 
        i++;
