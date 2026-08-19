@@ -17,7 +17,7 @@ int ft_putnbr_len(int n)
         len += ft_putchar_len('-');
 		n = -n;
     }
-    else if  (n > 9)
+    if  (n > 9)
     {
         len += ft_putnbr_len(n / 10); 
 		len += ft_putnbr_len(n % 10);
