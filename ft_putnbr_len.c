@@ -23,8 +23,6 @@ int ft_putnbr_len(int n)
 		len += ft_putnbr_len(n % 10);
     }
     else
-    {
         len += ft_putchar_len(n + '0');
-    }
     return (len);
 }
