@@ -2,7 +2,7 @@
 
 int ft_putuint_len(unsigned int n)
 {
-    unsigned int len;
+    int len;
     
     len = 0;
     if  (n > 9)
@@ -19,6 +19,12 @@ int ft_putuint_len(unsigned int n)
 /*
 uint - unsigned int -
  just positive numbers (0 included) 0 up to 4,294,967,295
+
+ because of that I dont need to check INT_MIN
+ and also no need to check negatives (unsigned int)
+
+ int len ( becuase this function returns int, no need for 
+ unsigned int len, becuase I cant return it)
 
 
 */
