@@ -12,7 +12,7 @@ int ft_putnbr_len(int n)
         write(1, "-2147483648", 11);
         return (11);
     }
-    else if (n < 0) 
+    if (n < 0) 
     {
         len += ft_putchar_len('-');
 		n = -n;
