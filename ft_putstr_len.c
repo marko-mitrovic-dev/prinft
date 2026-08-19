@@ -3,11 +3,8 @@
 int	ft_putstr_len(char *s)
 {
     int i;
-    int counter;
 
-    counter = 0;
     i = 0;
-
     if(!s)
     {
         write(1, "(null)", 6);
@@ -17,8 +14,7 @@ int	ft_putstr_len(char *s)
     while (s[i] != '\0')
     {
         write(1, &s[i], 1);
-        counter++;
         i++;
     }
-	return (counter);
+	return (i);
 }

@@ -47,8 +47,6 @@ int ft_printf(const char *str, ...)
     return(letter_counter);
     }
 
-
-
     /*
     standard printf returns -1 if forwarded invalid pointer
     because ft_putchar_len.c returns 1, I can concatenate with counters(letter_counter) 
