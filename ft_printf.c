@@ -42,6 +42,10 @@ int ft_printf(const char *str, ...)
        {
         letter_counter += ft_putuint_len(va_arg(args, unsigned int));
         i++;
+        } else if (str[i] == '%' && (str[i + 1] == 'x' || str[i + 1] == 'X'))
+       {
+        letter_counter += ft_putx_len(va_arg(args, unsigned int));
+        i++;
         }
 
        i++;
