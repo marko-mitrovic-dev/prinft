@@ -1,14 +1,14 @@
 #include "printf.h"
 
-int ft_putx_len(unsigned int n)
+int ft_putx_len(unsigned int n, char format)
 {
     int len;
     
     len = 0;
     if  (n > 15)
     {
-        len += ft_putuint_len(n / 16); 
-		len += ft_putuint_len(n % 16);
+        len += ft_putx_len(n / 16, format); 
+		len += ft_putx_len(n % 16, format);
     }
     else if (n <= 9)
     {
@@ -16,7 +16,10 @@ int ft_putx_len(unsigned int n)
     }
     else
     {
-        len += ft_putchar_len(n - 10 + 'a');
+        if (format == 'x')
+            len += ft_putchar_len(n - 10 + 'a');
+        else if (format == 'X')
+            len += ft_putchar_len(n - 10 + 'A');
     }
     
     return(len);
