@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "ft_printf.h"
 
 int ft_printf(const char *str, ...)
 {
@@ -63,5 +63,5 @@ int ft_printf(const char *str, ...)
     because ft_putchar_len.c returns 1, I can concatenate with counters(letter_counter) 
     designers define it like this: va_arg(list_name, tip_podatka)
     i zato ih pisemo tako sta ide prvo a sta ide drugo. 
-    
+    NULL is in a library, so !src is always more secure way to check is it NULL then asking NULL
     */
