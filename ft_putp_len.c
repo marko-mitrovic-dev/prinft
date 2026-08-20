@@ -1,23 +1,15 @@
 #include "printf.h"
 
 
-int ft_putp_len(unsigned long ptr)
+static int ft_putptr_hex(unsigned long ptr)
 {
     int len;
 
     len = 0;
-    if (!ptr)
-    {
-        write(1, "(nil)", 5);
-        return (0);
-
-    }
-    len += ft_putstr_len("0x");
-
     if  (ptr > 15)
     {
-        len += ft_putp_len(ptr / 16); 
-		len += ft_putp_len(ptr % 16);
+        len += ft_putptr_hex(ptr / 16); 
+		len += ft_putptr_hex(ptr % 16);
     }
     else if (ptr <= 9)
     {
@@ -28,3 +20,29 @@ int ft_putp_len(unsigned long ptr)
     
     return(len);
 }
+
+int ft_putp_len(unsigned long ptr)
+{
+    int len;
+
+    len = 0;
+    if (!ptr)
+    {
+        write(1, "(nil)", 5);
+        return (5);
+
+    }
+    
+    len = ft_putstr_len("0x");
+    len += ft_putptr_hex(ptr);
+    
+    return(len);
+}
+
+
+/*
+NULL is an adress pointing nowhere has value of 0
+null is just a text which printf prints if I send NULL pointer with %s (specificator) 
+nil is just a text which printf prints, if I send NULL pointer with %p (specificator) 
+nil is short of latin nihil = nothing
+*/
