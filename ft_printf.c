@@ -58,5 +58,7 @@ int ft_printf(const char *str, ...)
     /*
     standard printf returns -1 if forwarded invalid pointer
     because ft_putchar_len.c returns 1, I can concatenate with counters(letter_counter) 
+    designers define it like this: va_arg(list_name, tip_podatka)
+    i zato ih pisemo tako sta ide prvo a sta ide drugo. 
     
     */
