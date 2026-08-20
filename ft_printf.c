@@ -1,5 +1,4 @@
-#include "ft_printf.h"
-#include <stdarg.h>
+#include "printf.h"
 
 int ft_printf(const char *str, ...)
 {
