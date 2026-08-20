@@ -10,7 +10,7 @@ int ft_printf(const char *str, ...)
     i = 0;
     letter_counter = 0; 
 
-    if (str == NULL)
+    if (!str)
         return(-1);
 
     va_start(args, str);
