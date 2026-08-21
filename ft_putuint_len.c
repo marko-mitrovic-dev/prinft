@@ -1,19 +1,18 @@
 #include "ft_printf.h"
 
-int ft_putuint_len(unsigned int n)
+int	ft_putuint_len(unsigned int n)
 {
-    int len;
-    
-    len = 0;
-    if  (n > 9)
-    {
-        len += ft_putuint_len(n / 10); 
+	int	len;
+
+	len = 0;
+	if (n > 9)
+	{
+		len += ft_putuint_len(n / 10);
 		len += ft_putuint_len(n % 10);
-    }
-    else
-        len += ft_putchar_len(n + '0');
-    
-    return(len);
+	}
+	else
+		len += ft_putchar_len(n + '0');
+	return (len);
 }
 
 /*
