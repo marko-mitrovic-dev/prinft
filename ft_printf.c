@@ -6,7 +6,7 @@
 /*   By: marko <emarkomitrovic@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 18:21:12 by marko             #+#    #+#             */
-/*   Updated: 2026/08/21 18:22:04 by marko            ###   ########.fr       */
+/*   Updated: 2026/08/21 19:45:37 by marko            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ int	ft_printf(const char *str, ...)
 	designers define it like this: va_arg(list_name, tip_podatka)
 	i zato ih pisemo tako sta ide prvo a sta ide drugo. 
 	NULL is in a library, so !src is always more secure way
-	 to check is it NULL then asking NULL
+			to check is it NULL then asking NULL
 	*/
